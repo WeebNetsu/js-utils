@@ -1,4 +1,7 @@
 /**
+ * @deprecated
+ * ## use urlQueryBuilder instead
+ *
  * Will generate a url with the given parameters
  *
  * ie. /path?param1=value1&param2=value2
@@ -21,6 +24,37 @@ export const queryURLBuilder = (
 			queryURL += `&${key}=${value}`;
 		}
 	});
+	return queryURL;
+};
+
+/**
+ * Will generate a url with the given query parameters
+ *
+ * @param url base URL that we want to append to
+ * @param data key value pairs to append to the url
+ * @returns url with appended data
+ *
+ * @example
+ *  urlQueryBuilder("http://test", {
+ *      cool: true,
+ *      name: "jack"
+ *  }) // http://test?cool=true&name=jack
+ */
+export const urlQueryBuilder = (
+	url: string,
+	data: {
+		[key: string]: string | number | boolean | undefined | null;
+	}
+) => {
+	let queryURL = url;
+
+	Object.keys(data).map((key) => {
+		const value = data[key];
+
+		// queryURL.search("?") > -1 -> if there are already other query parameters
+		queryURL += `${queryURL.search("?") > -1 ? "&" : "?"}${key}=${value}`;
+	});
+
 	return queryURL;
 };
 
