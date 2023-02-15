@@ -56,7 +56,9 @@ export const urlQueryBuilder = (
 
 		if (value !== undefined && value !== null) {
 			// queryURL.search("?") > -1 -> if there are already other query parameters
-			queryURL += `${queryURL.search("?") > -1 ? "&" : "?"}${key}=${value}`;
+			queryURL += `${
+				queryURL.split("?").length > 1 ? "&" : "?"
+			}${key}=${value}`;
 		}
 	});
 
