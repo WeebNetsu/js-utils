@@ -28,7 +28,10 @@ export const queryURLBuilder = (
 };
 
 /**
- * Will generate a url with the given query parameters
+ * Will generate a url with the given query parameters.
+ *
+ * Note that if the value in data is undefined or null
+ * the parameter will be ignored.
  *
  * @param url base URL that we want to append to
  * @param data key value pairs to append to the url
@@ -51,8 +54,10 @@ export const urlQueryBuilder = (
 	Object.keys(data).map((key) => {
 		const value = data[key];
 
-		// queryURL.search("?") > -1 -> if there are already other query parameters
-		queryURL += `${queryURL.search("?") > -1 ? "&" : "?"}${key}=${value}`;
+		if (value !== undefined && value !== null) {
+			// queryURL.search("?") > -1 -> if there are already other query parameters
+			queryURL += `${queryURL.search("?") > -1 ? "&" : "?"}${key}=${value}`;
+		}
 	});
 
 	return queryURL;

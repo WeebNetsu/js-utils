@@ -1,11 +1,11 @@
 {
     "name": "@netsu/js-utils",
-    "version": "1.0.3",
+    "version": "1.0.5",
     "description": "Simple utilities, useful for almost any JS project",
     "main": "dist/index.js",
     "scripts": {
         "compile": "tsc",
-        "publish": "npm publish --access=public",
+        "publish": "tsc && npm publish",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
