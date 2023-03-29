@@ -1,3 +1,5 @@
+import { urlSafeRegex } from "../regex";
+
 /**
  * Convert the first letter of a piece of text to uppercase
  *
@@ -28,4 +30,25 @@ export const limitText = (text: string, limit = 50) => {
 	// if the substring ends on a white space
 	// ie. 'I am ' should not become 'I am ...' but instead 'I am...'
 	return `${text.trim().substring(0, limit).trimEnd()}...`;
+};
+
+/**
+ * Remove the spaces in a given string
+ *
+ * @param text string to remove spaces from
+ * @returns the provided text without any spaces
+ */
+export const removeSpacesFromStr = (text: string) => {
+	return text.replace(/\s/g, "");
+};
+
+/**
+ * Remove any characters that are not digits, letters or _
+ * from a string
+ *
+ * @param text string to remove unsafe characters from
+ * @returns the provided text without any unsafe characters
+ */
+export const removeUnsafeCharsFromStr = (text: string) => {
+	return text.replace(urlSafeRegex, "");
 };
