@@ -29,7 +29,7 @@ export const arrayContainsArray = <T>(superset: T[], subset: T[]) => {
  * @returns array without any duplicate values
  */
 export const removeDuplicatesFromArray = (
-	arr: (string | number | boolean)[]
+	arr: (string | number | boolean | undefined)[]
 ) => {
 	return [...new Set(arr)];
 };
