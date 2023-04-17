@@ -21,3 +21,15 @@ export const removeUndefinedFromArray = <T>(arr: (T | undefined)[]): T[] => {
 export const arrayContainsArray = <T>(superset: T[], subset: T[]) => {
 	return subset.every((value) => superset.indexOf(value) >= 0);
 };
+
+/**
+ * Removes duplicate values from array
+ *
+ * @param arr array to remove duplicates from
+ * @returns array without any duplicate values
+ */
+export const removeDuplicatesFromArray = (
+	arr: (string | number | boolean)[]
+) => {
+	return [...new Set(arr)];
+};
