@@ -36,7 +36,7 @@ SImple utilities for your JavaScript/Typescript project!
 Removes all 'undefined' values from an array
 
 ```ts
-const x = removeUndefinedFromArray([1, undefined, 2, undefined, 3]);
+removeUndefinedFromArray([1, undefined, 2, undefined, 3]); // [1, 2, 3]
 ```
 
 #### arrayContainsArray
