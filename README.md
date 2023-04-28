@@ -1,6 +1,10 @@
 # @netsu/js-utils
 
-SImple utilities for your JavaScript/Typescript project!
+Simple utilities for your JavaScript/Typescript project!
+
+Installation: `npm i @netsu/js-utils`
+
+NPM: https://www.npmjs.com/package/@netsu/js-utils
 
 ## Functions List
 
