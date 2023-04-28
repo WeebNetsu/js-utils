@@ -66,11 +66,16 @@ export const urlQueryBuilder = (
 };
 
 /**
- * Search for query, this will ignore casing.
+ * Search for text in string, this will ignore casing.
+ * Will be true if at least one of the searches returned true.
  *
  * @param search Query to search for
  * @param args Values to search through
  * @returns boolean - true if query was found
+ * @example
+ * includeSearch("cool", "I am cool") // true
+ * includeSearch("cool", "I am drool", "you are cool") // true
+ * includeSearch("cool", "yup", "nothing") // false
  */
 export const includeSearch = (
 	search: string,

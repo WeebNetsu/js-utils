@@ -26,6 +26,9 @@ SImple utilities for your JavaScript/Typescript project!
 - [Regex](#regex)
   - [digitRegex](#digitregex)
   - [emailRegex](#emailregex)
+- [Other](#other)
+  - [urlQueryBuilder](#urlquerybuilder)
+  - [includeSearch](#includesearch)
 
 ## Available Functions
 
@@ -206,4 +209,31 @@ emailRegex.test("mike@gmail.com"); // true
 emailRegex.test("mike09+cool@gmail.com"); // true
 emailRegex.test("mike09+cool@gmail"); // false
 emailRegex.test("mike09+cool.com"); // false
+```
+
+### Other
+
+These are functions that either does not fit in one of the specified categories, or now does, but would break programs if moved elsewhere.
+
+#### urlQueryBuilder
+
+Will generate a url with the given query parameters.
+
+_Note that if the value in data is undefined or null the parameter will be ignored._
+
+```ts
+urlQueryBuilder("http://test.com/wow", {
+	cool: true,
+	name: "jack",
+}); // http://test.com/wow?cool=true&name=jack
+```
+
+#### includeSearch
+
+Search for text in string, this will ignore casing. Will be true if at least one of the searches returned true.
+
+```ts
+includeSearch("cool", "I am cool"); // true
+includeSearch("cool", "I am drool", "you are cool"); // true
+includeSearch("cool", "yup", "nothing"); // false
 ```
