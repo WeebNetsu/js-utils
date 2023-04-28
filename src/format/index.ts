@@ -39,7 +39,7 @@ export const formatMin = (min: number): string => {
 };
 
 /**
- * Converts number of minutes to time format (hh:mm:ss)
+ * Converts number of seconds to time format (hh:mm:ss)
  *
  * @param sec Seconds to be converted to time format
  * @returns Formatted time (80 -> 00:01:20)
@@ -54,7 +54,7 @@ export const formatSec = (sec: number): string => {
 };
 
 /**
- * Format time stamp into numbers.
+ * Format timestamp into minutes.
  *
  * ie. 8:15 -> 495 (minutes)
  *

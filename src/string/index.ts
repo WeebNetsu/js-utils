@@ -43,6 +43,8 @@ export const removeSpacesFromStr = (text: string) => {
 };
 
 /**
+ * @deprecated May not work as expected
+ *
  * Remove any characters that are not digits, letters or _
  * from a string
  *
