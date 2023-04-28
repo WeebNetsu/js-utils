@@ -37,8 +37,6 @@ Removes all 'undefined' values from an array
 
 ```ts
 const x = removeUndefinedFromArray([1, undefined, 2, undefined, 3]);
-
-console.log(x); // [1, 2, 3]
 ```
 
 #### arrayContainsArray
