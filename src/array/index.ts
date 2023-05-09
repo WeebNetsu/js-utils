@@ -10,6 +10,28 @@ export const removeUndefinedFromArray = <T>(arr: (T | undefined)[]): T[] => {
 };
 
 /**
+ * Removes all 'null' from an array
+ *
+ * @param arr Array to modify
+ * @returns array without any null values
+ */
+export const removeNullFromArray = <T>(arr: (T | null)[]): T[] => {
+	return arr.filter((a) => a !== null) as T[];
+};
+
+/**
+ * Removes all 'undefined' and 'null' values from an array
+ *
+ * @param arr Array to modify
+ * @returns array without any void values
+ */
+export const removeEmptyValuesFromArray = <T>(
+	arr: (T | undefined | null)[]
+): T[] => {
+	return arr.filter((a) => typeof a !== "undefined" && a !== null) as T[];
+};
+
+/**
  * Returns TRUE if the first specified array contains all elements
  * from the second one. FALSE otherwise.
  *

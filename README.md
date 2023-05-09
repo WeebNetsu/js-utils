@@ -10,6 +10,8 @@ NPM: https://www.npmjs.com/package/@netsu/js-utils
 
 - [Arrays](#arrays)
   - [removeUndefinedFromArray](#removeundefinedfromarray)
+  - [removeNullFromArray](#removenullfromarray)
+  - [removeEmptyValuesFromArray](#removeemptyvaluesfromarray)
   - [arrayContainsArray](#arraycontainsarray)
   - [removeDuplicatesFromArray](#removeduplicatesfromarray)
 - [Strings](#strings)
@@ -44,6 +46,22 @@ Removes all 'undefined' values from an array
 
 ```ts
 removeUndefinedFromArray([1, undefined, 2, undefined, 3]); // [1, 2, 3]
+```
+
+#### removeNullFromArray
+
+Removes all 'null' from an array
+
+```ts
+removeNullFromArray([1, null, 2, null, 3]); // [1, 2, 3]
+```
+
+#### removeEmptyValuesFromArray
+
+Removes all 'undefined' and 'null' values from an array
+
+```ts
+removeEmptyValuesFromArray([1, null, 2, undefined, 3]); // [1, 2, 3]
 ```
 
 #### arrayContainsArray
