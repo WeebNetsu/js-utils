@@ -45,6 +45,18 @@ export const arrayContainsArray = <T>(superset: T[], subset: T[]) => {
 };
 
 /**
+ * Check if an array has duplicate values
+ *
+ * _Note: This function is case sensitive, "Hello" !== "hello"_
+ *
+ * @param array Array to check for duplicates
+ * @returns true if array has duplicate values
+ */
+export const arrayHasDuplicates = (array: any[]) => {
+	return new Set(array).size !== array.length;
+};
+
+/**
  * Removes duplicate values from array
  *
  * @param arr array to remove duplicates from

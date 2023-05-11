@@ -13,6 +13,7 @@ NPM: https://www.npmjs.com/package/@netsu/js-utils
   - [removeNullFromArray](#removenullfromarray)
   - [removeEmptyValuesFromArray](#removeemptyvaluesfromarray)
   - [arrayContainsArray](#arraycontainsarray)
+  - [arrayHasDuplicates](#arrayhasduplicates)
   - [removeDuplicatesFromArray](#removeduplicatesfromarray)
 - [Strings](#strings)
   - [capitalizeFirstLetter](#capitalizefirstletter)
@@ -71,6 +72,15 @@ Returns TRUE if the first specified array contains all elements from the second 
 ```ts
 arrayContainsArray([1, 2, 3], [1, 2]); // true
 arrayContainsArray([1, 3], [1, 2]); // false
+```
+
+#### arrayHasDuplicates
+
+Check if an array has duplicate values.
+
+```ts
+arrayHasDuplicates(["Hello", "World", "Hello"]); // true
+arrayHasDuplicates(["Hello", "World", "!"]); // false
 ```
 
 #### removeDuplicatesFromArray
