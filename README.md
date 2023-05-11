@@ -19,6 +19,7 @@ NPM: https://www.npmjs.com/package/@netsu/js-utils
   - [capitalizeFirstLetter](#capitalizefirstletter)
   - [limitText](#limittext)
   - [removeSpacesFromStr](#removespacesfromstr)
+  - [calculateStringSimilarity](#calculatestringsimilarity)
 - [Checks](#checks)
   - [isValidNumber](#isvalidnumber)
   - [checkStrEmpty](#checkstrempty)
@@ -123,6 +124,17 @@ Remove the spaces in a given string
 
 ```ts
 removeSpacesFromStr("I am cool"); // Iamcool
+```
+
+#### calculateStringSimilarity
+
+Calculates how similar 2 strings are to each other.
+
+```ts
+calculateStringSimilarity("mike", "mike"); // 1 (100% similar)
+calculateStringSimilarity("jackie chan", "jackie chon"); // 0.9090
+calculateStringSimilarity("jakeiscool", "jakecool"); // 0.8
+calculateStringSimilarity("mark", "nicole"); // 0
 ```
 
 ### Checks
