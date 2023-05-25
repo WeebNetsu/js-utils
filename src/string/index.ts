@@ -1,4 +1,4 @@
-import { urlSafeRegex } from "../regex";
+import { linkRegex, urlSafeRegex } from "../regex";
 
 /**
  * Convert the first letter of a piece of text to uppercase
@@ -97,4 +97,37 @@ export const calculateStringSimilarity = (string1: string, string2: string) => {
 	const similarityRatio = 1 - dp[length1][length2] / Math.max(length1, length2);
 
 	return similarityRatio;
+};
+
+/**
+ * Changes all links in a text to an anchor tag.
+ *
+ * @param text text to check for links
+ * @returns text with <a> tag covering links
+ *
+ * @example
+ * enableTextLinks("Cannot be manually closed. Click this: https://www.youtube.com/stevesteacher and https://www.meetingpal.app")
+ *
+ * Will Return:
+ * 'Cannot be manually closed. Click this: <a href="https://www.youtube.com/stevesteacher" target="_blank">https://www.youtube.com/stevesteacher</a> and <a href="https://www.meetingpal.app" target="_blank">https://www.meetingpal.app</a>'
+ */
+export const addAnchorTagsToText = (text: string) => {
+	let newMessage = text;
+
+	const matched = newMessage.matchAll(linkRegex);
+
+	let value = matched.next().value;
+
+	while (value) {
+		const link = value[0];
+
+		newMessage = newMessage.replaceAll(
+			link,
+			`<a href="${link}" target="_blank">${link}</a>`
+		);
+
+		value = matched.next().value;
+	}
+
+	return newMessage;
 };

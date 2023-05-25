@@ -3,7 +3,7 @@
 		/* Visit https://aka.ms/tsconfig.json to read more about this file */
 
 		/* Language and Environment */
-		"target": "es2019" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+		"target": "es2021" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
 
 		/* Modules */
 		"module": "commonjs" /* Specify what module code is generated. */,

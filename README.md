@@ -20,6 +20,7 @@ NPM: https://www.npmjs.com/package/@netsu/js-utils
   - [limitText](#limittext)
   - [removeSpacesFromStr](#removespacesfromstr)
   - [calculateStringSimilarity](#calculatestringsimilarity)
+  - [addAnchorTagsToText](#addanchortagstotext)
 - [Checks](#checks)
   - [isValidNumber](#isvalidnumber)
   - [checkStrEmpty](#checkstrempty)
@@ -34,6 +35,7 @@ NPM: https://www.npmjs.com/package/@netsu/js-utils
 - [Regex](#regex)
   - [digitRegex](#digitregex)
   - [emailRegex](#emailregex)
+  - [linkRegex](#linkregex)
 - [Other](#other)
   - [urlQueryBuilder](#urlquerybuilder)
   - [includeSearch](#includesearch)
@@ -135,6 +137,17 @@ calculateStringSimilarity("mike", "mike"); // 1 (100% similar)
 calculateStringSimilarity("jackie chan", "jackie chon"); // 0.9090
 calculateStringSimilarity("jakeiscool", "jakecool"); // 0.8
 calculateStringSimilarity("mark", "nicole"); // 0
+```
+
+#### addAnchorTagsToText
+
+Changes all links in a text to an anchor tag.
+
+```ts
+// Cannot be manually closed. Click this: <a href="https://www.youtube.com/stevesteacher" target="_blank">https://www.youtube.com/stevesteacher</a> and <a href="https://www.youtube.com" target="_blank">https://www.youtube.com</a>
+enableTextLinks(
+	"Cannot be manually closed. Click this: https://www.youtube.com/stevesteacher and https://www.youtube.com"
+);
 ```
 
 ### Checks
@@ -253,6 +266,15 @@ emailRegex.test("mike@gmail.com"); // true
 emailRegex.test("mike09+cool@gmail.com"); // true
 emailRegex.test("mike09+cool@gmail"); // false
 emailRegex.test("mike09+cool.com"); // false
+```
+
+#### linkRegex
+
+Regex that can find links in a string
+
+```ts
+emailRegex.test("https://www.youtube.com/stevesteacher"); // true
+emailRegex.test("mike@gmail.com"); // false
 ```
 
 ### Other
