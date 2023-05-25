@@ -106,10 +106,10 @@ export const calculateStringSimilarity = (string1: string, string2: string) => {
  * @returns text with <a> tag covering links
  *
  * @example
- * enableTextLinks("Cannot be manually closed. Click this: https://www.youtube.com/stevesteacher and https://www.meetingpal.app")
+ * enableTextLinks("Cannot be manually closed. Click this: https://www.youtube.com/stevesteacher and https://www.youtube.com")
  *
  * Will Return:
- * 'Cannot be manually closed. Click this: <a href="https://www.youtube.com/stevesteacher" target="_blank">https://www.youtube.com/stevesteacher</a> and <a href="https://www.meetingpal.app" target="_blank">https://www.meetingpal.app</a>'
+ * 'Cannot be manually closed. Click this: <a href="https://www.youtube.com/stevesteacher" target="_blank">https://www.youtube.com/stevesteacher</a> and <a href="https://www.youtube.com" target="_blank">https://www.youtube.com</a>'
  */
 export const addAnchorTagsToText = (text: string) => {
 	let newMessage = text;
