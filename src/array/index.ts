@@ -20,12 +20,26 @@ export const removeNullFromArray = <T>(arr: (T | null)[]): T[] => {
 };
 
 /**
+ * @deprecated use removeVoidValuesFromArray instead
+ *
  * Removes all 'undefined' and 'null' values from an array
  *
  * @param arr Array to modify
  * @returns array without any void values
  */
 export const removeEmptyValuesFromArray = <T>(
+	arr: (T | undefined | null)[]
+): T[] => {
+	return arr.filter((a) => typeof a !== "undefined" && a !== null) as T[];
+};
+
+/**
+ * Removes all 'undefined' and 'null' values from an array
+ *
+ * @param arr Array to modify
+ * @returns array without any void values
+ */
+export const removeVoidValuesFromArray = <T>(
 	arr: (T | undefined | null)[]
 ): T[] => {
 	return arr.filter((a) => typeof a !== "undefined" && a !== null) as T[];

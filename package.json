@@ -1,6 +1,6 @@
 {
     "name": "@netsu/js-utils",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "Simple utilities, useful for almost any JS project",
     "main": "dist/index.js",
     "scripts": {
