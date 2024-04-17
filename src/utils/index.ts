@@ -69,6 +69,10 @@ export const urlQueryBuilder = (
  * Search for text in string, this will ignore casing.
  * Will be true if at least one of the searches returned true.
  *
+ * @note this uses .include() to search, so will only work on
+ * individual words and not text in words. Use regexStringListSearch() instead
+ * if you want a more powerful search
+ *
  * @param search Query to search for
  * @param args Values to search through
  * @returns boolean - true if query was found

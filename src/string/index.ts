@@ -131,3 +131,48 @@ export const addAnchorTagsToText = (text: string) => {
 
 	return newMessage;
 };
+
+/**
+ * Search for text in string, this will ignore casing.
+ *
+ * @param search Query to search for (can be regex)
+ * @param value Value to search through
+ * @param regexPattern "ig" Unless specified otherwise
+ * @returns boolean - true if query was found
+ * @example
+ * regexStringSearch("cool", "I am cool") // true
+ * regexStringSearch("cool", "I am drool", "ig") // true
+ * regexStringSearch("cool", "yup") // false
+ */
+export const regexStringSearch = (
+	search: string | RegExp,
+	value: string,
+	regexPattern = "ig"
+): boolean => {
+	const reg = new RegExp(search, regexPattern);
+
+	return reg.test(value);
+};
+
+/**
+ * Search for text in an array of strings, this will ignore casing.
+ * Will be true if at least one of the searches returned true.
+ *
+ * @param search Query to search for (can be regex)
+ * @param value Values to search through
+ * @param regexPattern "ig" Unless specified otherwise
+ * @returns boolean - true if query was found
+ * @example
+ * regexStringListSearch("cool", ["I am cool"]) // true
+ * regexStringListSearch("cool", ["I am drool", "you are cool"], "ig") // true
+ * regexStringListSearch("cool", ["yup", "nothing"]) // false
+ */
+export const regexStringListSearch = (
+	search: string | RegExp,
+	values: string[],
+	regexPattern = "ig"
+): boolean => {
+	const reg = new RegExp(search, regexPattern);
+
+	return values.map((v) => reg.test(v)).indexOf(true) !== -1;
+};

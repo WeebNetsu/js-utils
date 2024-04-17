@@ -21,6 +21,8 @@ NPM: https://www.npmjs.com/package/@netsu/js-utils
   - [removeSpacesFromStr](#removespacesfromstr)
   - [calculateStringSimilarity](#calculatestringsimilarity)
   - [addAnchorTagsToText](#addanchortagstotext)
+  - [regexStringSearch](#regexstringsearch)
+  - [regexStringListSearch](#regexstringlistsearch)
 - [Checks](#checks)
   - [isValidNumber](#isvalidnumber)
   - [checkStrEmpty](#checkstrempty)
@@ -148,6 +150,26 @@ Changes all links in a text to an anchor tag.
 enableTextLinks(
 	"Cannot be manually closed. Click this: https://www.youtube.com/stevesteacher and https://www.youtube.com"
 );
+```
+
+#### regexStringSearch
+
+Search for text in string, this will ignore casing.
+
+```ts
+regexStringSearch("cool", "I am cool"); // true
+regexStringSearch("cool", "I am drool", "ig"); // true
+regexStringSearch("cool", "yup"); // false
+```
+
+#### regexStringListSearch
+
+Search for text in string, this will ignore casing. Will be true if at least one of the searches returned true.
+
+```ts
+regexStringListSearch("cool", ["I am cool"]); // true
+regexStringListSearch("cool", ["I am drool", "you are cool"], "ig"); // true
+regexStringListSearch("cool", ["yup", "nothing"]); // false
 ```
 
 ### Checks
@@ -297,6 +319,8 @@ urlQueryBuilder("http://test.com/wow", {
 #### includeSearch
 
 Search for text in string, this will ignore casing. Will be true if at least one of the searches returned true.
+
+_NOTE:_ this uses .include() to search, so will only work on individual words and not text in words. Use [regexStringSearch()](#regexstringsearch) or [regexStringListSearch()](#regexstringlistsearch) instead if you want a more powerful search
 
 ```ts
 includeSearch("cool", "I am cool"); // true
