@@ -1,6 +1,6 @@
 {
     "name": "@netsu/js-utils",
-    "version": "1.2.3",
+    "version": "2.0.0",
     "description": "Simple utilities, useful for almost any JS project",
     "main": "dist/index.js",
     "scripts": {
@@ -17,7 +17,7 @@
     "author": "Stephen van der Westhuizen",
     "license": "MIT",
     "dependencies": {
-        "moment": "^2.29.4"
+        "dayjs": "^1.11.12"
     },
     "devDependencies": {
         "typescript": "^4.9.5"

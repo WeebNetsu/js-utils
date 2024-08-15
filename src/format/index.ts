@@ -1,4 +1,4 @@
-import moment from "moment";
+import dayjs from "dayjs";
 
 /**
  * Format JS date to date value that calendar inputs can use
@@ -7,7 +7,7 @@ import moment from "moment";
  * @returns Date formatted in YYYY-MM-DD
  */
 export const formatToCalendarDate = (date: Date = new Date()): string => {
-	return moment(date).format("YYYY-MM-DD");
+	return dayjs(date).format("YYYY-MM-DD");
 };
 
 /**
@@ -24,7 +24,7 @@ export const formatToHumanDate = (
 	date: Date = new Date(),
 	format = "D MMM YYYY HH:mm"
 ): string => {
-	return moment(date).format(format);
+	return dayjs(date).format(format);
 };
 
 /**
