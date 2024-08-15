@@ -1,33 +1,4 @@
 /**
- * @deprecated
- * ## use urlQueryBuilder instead
- *
- * Will generate a url with the given parameters
- *
- * ie. /path?param1=value1&param2=value2
- *
- *  NOTE: Try to keep keys camelCase
- *
- * @param url Base URL that we want to append to
- * @param data key value pairs to append to the url
- * @returns url with appended data
- */
-export const queryURLBuilder = (
-	url: string,
-	data: { key: string; value: string | number }[]
-) => {
-	let queryURL = url;
-	data.forEach(({ key, value }, index) => {
-		if (index === 0) {
-			queryURL += `?${key}=${value}`;
-		} else {
-			queryURL += `&${key}=${value}`;
-		}
-	});
-	return queryURL;
-};
-
-/**
  * Will generate a url with the given query parameters.
  *
  * Note that if the value in data is undefined or null

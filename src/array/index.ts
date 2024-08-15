@@ -76,8 +76,10 @@ export const arrayHasDuplicates = (array: any[]) => {
  * @param arr array to remove duplicates from
  * @returns array without any duplicate values
  */
-export const removeDuplicatesFromArray = (
-	arr: (string | number | boolean | undefined)[]
-) => {
+export const removeDuplicatesFromArray = <
+	T extends string | number | boolean | undefined
+>(
+	arr: T[]
+): T[] => {
 	return [...new Set(arr)];
 };
