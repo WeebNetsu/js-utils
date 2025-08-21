@@ -17,6 +17,7 @@ NPM: https://www.npmjs.com/package/@netsu/js-utils
   - [removeDuplicatesFromArray](#removeduplicatesfromarray)
 - [Strings](#strings)
   - [capitalizeFirstLetter](#capitalizefirstletter)
+  - [escapeRegex](#escaperegex)
   - [limitText](#limittext)
   - [removeSpacesFromStr](#removespacesfromstr)
   - [calculateStringSimilarity](#calculatestringsimilarity)
@@ -105,6 +106,15 @@ Convert the first letter of a piece of text to uppercase
 
 ```ts
 capitalizeFirstLetter("mike is cool"); // Mike is cool
+```
+
+#### escapeRegex
+
+Escape regex inside a string
+
+```ts
+// this example assumes you are receiving a raw input, so this is not a valid JS example
+escapeRegex("mike is \ cool"); // Mike is \\ cool
 ```
 
 #### limitText

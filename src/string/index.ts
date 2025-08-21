@@ -13,6 +13,16 @@ export const capitalizeFirstLetter = (text: string): string => {
 };
 
 /**
+ * Escape regex inside a string
+ *
+ * @param text text to parse
+ * @returns text with properly escaped regex
+ */
+export const escapeRegex = (text: string): string => {
+	return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+};
+
+/**
  * Limits a piece of text, if the text is longer than the limit, then the
  * text will end with '...' after the limited amount of characters has been
  * reached.
@@ -149,7 +159,10 @@ export const regexStringSearch = (
 	value: string,
 	regexPattern = "ig"
 ): boolean => {
-	const reg = new RegExp(search, regexPattern);
+	const reg = new RegExp(
+		search instanceof RegExp ? search : escapeRegex(search),
+		regexPattern
+	);
 
 	return reg.test(value);
 };
@@ -172,7 +185,10 @@ export const regexStringListSearch = (
 	values: string[],
 	regexPattern = "ig"
 ): boolean => {
-	const reg = new RegExp(search, regexPattern);
+	const reg = new RegExp(
+		search instanceof RegExp ? search : escapeRegex(search),
+		regexPattern
+	);
 
 	return values.map((v) => reg.test(v)).indexOf(true) !== -1;
 };
