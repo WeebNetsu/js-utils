@@ -1,4 +1,4 @@
-import { digitRegex } from "../regex";
+import { digitRegex, emailRegex } from "../regex";
 
 /**
  * This will check if the value passed in is a valid number, mainly useful on strings.
@@ -16,6 +16,23 @@ export const isValidNumber = (value: string | number) => {
 		String(value).replace(/\s/g, "").split(".").length <= 2
 	);
 };
+
+/**
+ * Checks if an email is valid
+ *
+ * @param email a string that will be or is user's email used for login
+ * @returns true if the email is valid
+ */
+export const isValidEmail = (email?: string) => {
+	if (!email) return false;
+	if (checkStrEmpty(email)) return false;
+
+	// just in case
+	if (email.split("@").length !== 2) return false;
+
+	return emailRegex.test(email);
+};
+
 /**
  * Checks if string is empty, if it is, returns true. It will also check if passed
  * in value is of type "string".

@@ -26,6 +26,7 @@ NPM: https://www.npmjs.com/package/@netsu/js-utils
   - [regexStringListSearch](#regexstringlistsearch)
 - [Checks](#checks)
   - [isValidNumber](#isvalidnumber)
+  - [isValidEmail](#isvalidemail)
   - [checkStrEmpty](#checkstrempty)
 - [Format](#format)
   - [formatToCalendarDate](#formattocalendardate)
@@ -114,7 +115,7 @@ Escape regex inside a string
 
 ```ts
 // this example assumes you are receiving a raw input, so this is not a valid JS example
-escapeRegex("mike is \ cool"); // Mike is \\ cool
+escapeRegex("mike is  cool"); // Mike is \\ cool
 ```
 
 #### limitText
@@ -194,6 +195,16 @@ _Note: Infinity and -Infinity will be marked as **NOT** valid numbers_
 isValidNumber(20); // true
 isValidNumber("20.3"); // true
 isValidNumber("lol"); // false
+```
+
+#### isValidEmail
+
+This will check if the value passed in is a valid email.
+
+```ts
+isValidEmail("mark@gmail.com"); // true
+isValidEmail("nick"); // false
+isValidEmail("jack@mac@test.com"); // false
 ```
 
 #### checkStrEmpty

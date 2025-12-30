@@ -1,33 +1,33 @@
 {
-    "name": "@netsu/js-utils",
-    "version": "2.1.0",
-    "description": "Simple utilities, useful for almost any JS project",
-    "main": "dist/index.js",
-    "scripts": {
-        "build": "tsc",
-        "publish": "npm i && npm run build && npm publish",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [
-        "utilities",
-        "weebnetsu",
-        "js-utils",
-        "netsu"
-    ],
-    "author": "Stephen van der Westhuizen",
-    "license": "MIT",
-    "dependencies": {
-        "dayjs": "^1.11.13"
-    },
-    "devDependencies": {
-        "typescript": "^4.9.5"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/WeebNetsu/js-utils"
-    },
-    "types": "dist/index.d.ts",
-    "files": [
-        "dist/"
-    ]
+	"name": "@netsu/js-utils",
+	"version": "2.1.2",
+	"description": "Simple utilities, useful for almost any JS project",
+	"main": "dist/index.js",
+	"scripts": {
+		"build": "tsc",
+		"publish": "npm i && npm run build && npm publish",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"utilities",
+		"weebnetsu",
+		"js-utils",
+		"netsu"
+	],
+	"author": "Stephen van der Westhuizen",
+	"license": "MIT",
+	"dependencies": {
+		"dayjs": "^1.11.13"
+	},
+	"devDependencies": {
+		"typescript": "^4.9.5"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/WeebNetsu/js-utils"
+	},
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist/"
+	]
 }
