@@ -19,5 +19,4 @@ export const urlSafeRegex = /[^a-zA-Z0-9-_]/g;
 /**
  * Regex that can find links in a string
  */
-export const linkRegex =
-	/\b(((https?|ftp|dict):\/\/|www\.)[^'">\s]+\.[^'">\s]+)(?=\s|$)(?!["<>])/g;
+export const linkRegex = /\b(((https?|ftp|dict):\/\/|www\.)[^'">\s]+\.[^'">\s]+)(?=\s|$)(?!["<>])/g;

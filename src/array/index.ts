@@ -5,8 +5,8 @@
  * @returns array without any undefined values
  */
 export const removeUndefinedFromArray = <T>(arr: (T | undefined)[]): T[] => {
-	// thank you https://stackoverflow.com/a/56991681/15586166
-	return arr.filter((a) => typeof a !== "undefined") as T[];
+    // thank you https://stackoverflow.com/a/56991681/15586166
+    return arr.filter((a) => typeof a !== 'undefined') as T[];
 };
 
 /**
@@ -16,7 +16,7 @@ export const removeUndefinedFromArray = <T>(arr: (T | undefined)[]): T[] => {
  * @returns array without any null values
  */
 export const removeNullFromArray = <T>(arr: (T | null)[]): T[] => {
-	return arr.filter((a) => a !== null) as T[];
+    return arr.filter((a) => a !== null) as T[];
 };
 
 /**
@@ -27,10 +27,8 @@ export const removeNullFromArray = <T>(arr: (T | null)[]): T[] => {
  * @param arr Array to modify
  * @returns array without any void values
  */
-export const removeEmptyValuesFromArray = <T>(
-	arr: (T | undefined | null)[]
-): T[] => {
-	return arr.filter((a) => typeof a !== "undefined" && a !== null) as T[];
+export const removeEmptyValuesFromArray = <T>(arr: (T | undefined | null)[]): T[] => {
+    return arr.filter((a) => typeof a !== 'undefined' && a !== null) as T[];
 };
 
 /**
@@ -39,10 +37,8 @@ export const removeEmptyValuesFromArray = <T>(
  * @param arr Array to modify
  * @returns array without any void values
  */
-export const removeVoidValuesFromArray = <T>(
-	arr: (T | undefined | null)[]
-): T[] => {
-	return arr.filter((a) => typeof a !== "undefined" && a !== null) as T[];
+export const removeVoidValuesFromArray = <T>(arr: (T | undefined | null)[]): T[] => {
+    return arr.filter((a) => typeof a !== 'undefined' && a !== null) as T[];
 };
 
 /**
@@ -55,7 +51,7 @@ export const removeVoidValuesFromArray = <T>(
  * @returns true if the first array contains all elements of second array
  */
 export const arrayContainsArray = <T>(superset: T[], subset: T[]) => {
-	return subset.every((value) => superset.indexOf(value) >= 0);
+    return subset.every((value) => superset.indexOf(value) >= 0);
 };
 
 /**
@@ -67,7 +63,7 @@ export const arrayContainsArray = <T>(superset: T[], subset: T[]) => {
  * @returns true if array has duplicate values
  */
 export const arrayHasDuplicates = (array: any[]) => {
-	return new Set(array).size !== array.length;
+    return new Set(array).size !== array.length;
 };
 
 /**
@@ -76,10 +72,6 @@ export const arrayHasDuplicates = (array: any[]) => {
  * @param arr array to remove duplicates from
  * @returns array without any duplicate values
  */
-export const removeDuplicatesFromArray = <
-	T extends string | number | boolean | undefined
->(
-	arr: T[]
-): T[] => {
-	return [...new Set(arr)];
+export const removeDuplicatesFromArray = <T extends string | number | boolean | undefined>(arr: T[]): T[] => {
+    return [...new Set(arr)];
 };

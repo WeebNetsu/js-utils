@@ -9,41 +9,41 @@ NPM: https://www.npmjs.com/package/@netsu/js-utils
 ## Functions List
 
 - [Arrays](#arrays)
-  - [removeUndefinedFromArray](#removeundefinedfromarray)
-  - [removeNullFromArray](#removenullfromarray)
-  - [removeVoidValuesFromArray](#removevoidvaluesfromarray)
-  - [arrayContainsArray](#arraycontainsarray)
-  - [arrayHasDuplicates](#arrayhasduplicates)
-  - [removeDuplicatesFromArray](#removeduplicatesfromarray)
+    - [removeUndefinedFromArray](#removeundefinedfromarray)
+    - [removeNullFromArray](#removenullfromarray)
+    - [removeVoidValuesFromArray](#removevoidvaluesfromarray)
+    - [arrayContainsArray](#arraycontainsarray)
+    - [arrayHasDuplicates](#arrayhasduplicates)
+    - [removeDuplicatesFromArray](#removeduplicatesfromarray)
 - [Strings](#strings)
-  - [capitalizeFirstLetter](#capitalizefirstletter)
-  - [escapeRegex](#escaperegex)
-  - [limitText](#limittext)
-  - [removeSpacesFromStr](#removespacesfromstr)
-  - [calculateStringSimilarity](#calculatestringsimilarity)
-  - [addAnchorTagsToText](#addanchortagstotext)
-  - [regexStringSearch](#regexstringsearch)
-  - [regexStringListSearch](#regexstringlistsearch)
+    - [capitalizeFirstLetter](#capitalizefirstletter)
+    - [escapeRegex](#escaperegex)
+    - [limitText](#limittext)
+    - [removeSpacesFromStr](#removespacesfromstr)
+    - [calculateStringSimilarity](#calculatestringsimilarity)
+    - [addAnchorTagsToText](#addanchortagstotext)
+    - [regexStringSearch](#regexstringsearch)
+    - [regexStringListSearch](#regexstringlistsearch)
 - [Checks](#checks)
-  - [isValidNumber](#isvalidnumber)
-  - [isValidEmail](#isvalidemail)
-  - [isNonEmptyStr](#isnonemptystr)
-  - [isNonEmptyArrStr](#isnonemptyarrstr)
+    - [isValidNumber](#isvalidnumber)
+    - [isValidEmail](#isvalidemail)
+    - [isNonEmptyStr](#isnonemptystr)
+    - [isNonEmptyArrStr](#isnonemptyarrstr)
 - [Format](#format)
-  - [formatToCalendarDate](#formattocalendardate)
-  - [formatToHumanDate](#formattohumandate)
-  - [formatMin](#formatmin)
-  - [formatSec](#formatsec)
-  - [formatTimestamp](#formattimestamp)
-  - [formatMoneyStr](#formatmoneystr)
-  - [currencyFormatter](#currencyformatter)
+    - [formatToCalendarDate](#formattocalendardate)
+    - [formatToHumanDate](#formattohumandate)
+    - [formatMin](#formatmin)
+    - [formatSec](#formatsec)
+    - [formatTimestamp](#formattimestamp)
+    - [formatMoneyStr](#formatmoneystr)
+    - [currencyFormatter](#currencyformatter)
 - [Regex](#regex)
-  - [digitRegex](#digitregex)
-  - [emailRegex](#emailregex)
-  - [linkRegex](#linkregex)
+    - [digitRegex](#digitregex)
+    - [emailRegex](#emailregex)
+    - [linkRegex](#linkregex)
 - [Other](#other)
-  - [urlQueryBuilder](#urlquerybuilder)
-  - [includeSearch](#includesearch)
+    - [urlQueryBuilder](#urlquerybuilder)
+    - [includeSearch](#includesearch)
 
 ## Available Functions
 
@@ -87,8 +87,8 @@ arrayContainsArray([1, 3], [1, 2]); // false
 Check if an array has duplicate values.
 
 ```ts
-arrayHasDuplicates(["Hello", "World", "Hello"]); // true
-arrayHasDuplicates(["Hello", "World", "!"]); // false
+arrayHasDuplicates(['Hello', 'World', 'Hello']); // true
+arrayHasDuplicates(['Hello', 'World', '!']); // false
 ```
 
 #### removeDuplicatesFromArray
@@ -97,7 +97,7 @@ Removes duplicate values from array.
 
 ```ts
 removeDuplicatesFromArray([1, 1, 2, 3, 4, 4]); // [1, 2, 3, 4]
-removeDuplicatesFromArray(["my", "my", "you"]); // ["my", "you"]
+removeDuplicatesFromArray(['my', 'my', 'you']); // ["my", "you"]
 ```
 
 ### Strings
@@ -107,7 +107,7 @@ removeDuplicatesFromArray(["my", "my", "you"]); // ["my", "you"]
 Convert the first letter of a piece of text to uppercase
 
 ```ts
-capitalizeFirstLetter("mike is cool"); // Mike is cool
+capitalizeFirstLetter('mike is cool'); // Mike is cool
 ```
 
 #### escapeRegex
@@ -116,7 +116,7 @@ Escape regex inside a string
 
 ```ts
 // this example assumes you are receiving a raw input, so this is not a valid JS example
-escapeRegex("mike is  cool"); // Mike is \\ cool
+escapeRegex('mike is  cool'); // Mike is \\ cool
 ```
 
 #### limitText
@@ -127,11 +127,11 @@ _NOTE: This will trim the text of useless white space!_
 
 ```ts
 // Hello world
-limitText("Hello world");
+limitText('Hello world');
 // Hello...
-limitText("Hello world", 5);
+limitText('Hello world', 5);
 // Lorem ipsum dolor, sit amet consectetur adipisicin...
-limitText("Lorem ipsum dolor, sit amet consectetur adipisicing elit.");
+limitText('Lorem ipsum dolor, sit amet consectetur adipisicing elit.');
 ```
 
 #### removeSpacesFromStr
@@ -139,7 +139,7 @@ limitText("Lorem ipsum dolor, sit amet consectetur adipisicing elit.");
 Remove the spaces in a given string
 
 ```ts
-removeSpacesFromStr("I am cool"); // Iamcool
+removeSpacesFromStr('I am cool'); // Iamcool
 ```
 
 #### calculateStringSimilarity
@@ -147,10 +147,10 @@ removeSpacesFromStr("I am cool"); // Iamcool
 Calculates how similar 2 strings are to each other.
 
 ```ts
-calculateStringSimilarity("mike", "mike"); // 1 (100% similar)
-calculateStringSimilarity("jackie chan", "jackie chon"); // 0.9090
-calculateStringSimilarity("jakeiscool", "jakecool"); // 0.8
-calculateStringSimilarity("mark", "nicole"); // 0
+calculateStringSimilarity('mike', 'mike'); // 1 (100% similar)
+calculateStringSimilarity('jackie chan', 'jackie chon'); // 0.9090
+calculateStringSimilarity('jakeiscool', 'jakecool'); // 0.8
+calculateStringSimilarity('mark', 'nicole'); // 0
 ```
 
 #### addAnchorTagsToText
@@ -160,7 +160,7 @@ Changes all links in a text to an anchor tag.
 ```ts
 // Cannot be manually closed. Click this: <a href="https://www.youtube.com/stevesteacher" target="_blank">https://www.youtube.com/stevesteacher</a> and <a href="https://www.youtube.com" target="_blank">https://www.youtube.com</a>
 enableTextLinks(
-	"Cannot be manually closed. Click this: https://www.youtube.com/stevesteacher and https://www.youtube.com",
+    'Cannot be manually closed. Click this: https://www.youtube.com/stevesteacher and https://www.youtube.com',
 );
 ```
 
@@ -169,9 +169,9 @@ enableTextLinks(
 Search for text in string, this will ignore casing.
 
 ```ts
-regexStringSearch("cool", "I am cool"); // true
-regexStringSearch("cool", "I am drool", "ig"); // true
-regexStringSearch("cool", "yup"); // false
+regexStringSearch('cool', 'I am cool'); // true
+regexStringSearch('cool', 'I am drool', 'ig'); // true
+regexStringSearch('cool', 'yup'); // false
 ```
 
 #### regexStringListSearch
@@ -179,9 +179,9 @@ regexStringSearch("cool", "yup"); // false
 Search for text in string, this will ignore casing. Will be true if at least one of the searches returned true.
 
 ```ts
-regexStringListSearch("cool", ["I am cool"]); // true
-regexStringListSearch("cool", ["I am drool", "you are cool"], "ig"); // true
-regexStringListSearch("cool", ["yup", "nothing"]); // false
+regexStringListSearch('cool', ['I am cool']); // true
+regexStringListSearch('cool', ['I am drool', 'you are cool'], 'ig'); // true
+regexStringListSearch('cool', ['yup', 'nothing']); // false
 ```
 
 ### Checks
@@ -194,8 +194,8 @@ _Note: Infinity and -Infinity will be marked as **NOT** valid numbers_
 
 ```ts
 isValidNumber(20); // true
-isValidNumber("20.3"); // true
-isValidNumber("lol"); // false
+isValidNumber('20.3'); // true
+isValidNumber('lol'); // false
 ```
 
 #### isValidEmail
@@ -203,9 +203,9 @@ isValidNumber("lol"); // false
 This will check if the value passed in is a valid email.
 
 ```ts
-isValidEmail("mark@gmail.com"); // true
-isValidEmail("nick"); // false
-isValidEmail("jack@mac@test.com"); // false
+isValidEmail('mark@gmail.com'); // true
+isValidEmail('nick'); // false
+isValidEmail('jack@mac@test.com'); // false
 ```
 
 #### isNonEmptyStr
@@ -213,8 +213,8 @@ isValidEmail("jack@mac@test.com"); // false
 Checks if string is not empty, if it has at least 1 NON SPACE character, returns true. It will also check if passed in value is of type "string".
 
 ```ts
-isNonEmptyStr("  "); // false
-isNonEmptyStr("lol"); // true
+isNonEmptyStr('  '); // false
+isNonEmptyStr('lol'); // true
 isNonEmptyStr(23); // false because not a string
 ```
 
@@ -223,8 +223,8 @@ isNonEmptyStr(23); // false because not a string
 Checks if all strings in an array is not empty. It will also check if passed in value is of type "string[]".
 
 ```ts
-isNonEmptyArrStr(["  ", "some text"]); // false, 1 item is an empty string
-isNonEmptyArrStr(["lol", "some text"]); // true
+isNonEmptyArrStr(['  ', 'some text']); // false, 1 item is an empty string
+isNonEmptyArrStr(['lol', 'some text']); // true
 isNonEmptyArrStr(23); // false because not an array of strings
 isNonEmptyArrStr([23]); // false because not an array of strings
 ```
@@ -273,9 +273,9 @@ formatSec(9999); // 02:46:39
 Format timestamp (HH:MM) into minutes.
 
 ```ts
-formatTimestamp("1:00"); // 60
-formatTimestamp("10:52"); // 652
-formatTimestamp("2:22"); // 142
+formatTimestamp('1:00'); // 60
+formatTimestamp('10:52'); // 652
+formatTimestamp('2:22'); // 142
 ```
 
 #### formatMoneyStr
@@ -284,8 +284,8 @@ Format amount to currency format
 
 ```ts
 formatMoneyStr(560); // 560.00 ZAR
-formatMoneyStr(560, "USD"); // 560.00 USD
-formatMoneyStr(560, "USD", false); // 560.00
+formatMoneyStr(560, 'USD'); // 560.00 USD
+formatMoneyStr(560, 'USD', false); // 560.00
 ```
 
 #### currencyFormatter
@@ -294,7 +294,7 @@ This will format the amount to the currency code passed in
 
 ```ts
 currencyFormatter(420.69); // R 420,69
-currencyFormatter(420.69, "USD"); // US$420,69
+currencyFormatter(420.69, 'USD'); // US$420,69
 ```
 
 ### Regex
@@ -306,9 +306,9 @@ Not functions, but useful constants
 Check if value is a digit
 
 ```ts
-digitRegex.test("23"); // true
-digitRegex.test("23.4"); // true
-digitRegex.test("nope"); // false
+digitRegex.test('23'); // true
+digitRegex.test('23.4'); // true
+digitRegex.test('nope'); // false
 ```
 
 #### emailRegex
@@ -316,11 +316,11 @@ digitRegex.test("nope"); // false
 Check if email is valid
 
 ```ts
-emailRegex.test("mike"); // false
-emailRegex.test("mike@gmail.com"); // true
-emailRegex.test("mike09+cool@gmail.com"); // true
-emailRegex.test("mike09+cool@gmail"); // false
-emailRegex.test("mike09+cool.com"); // false
+emailRegex.test('mike'); // false
+emailRegex.test('mike@gmail.com'); // true
+emailRegex.test('mike09+cool@gmail.com'); // true
+emailRegex.test('mike09+cool@gmail'); // false
+emailRegex.test('mike09+cool.com'); // false
 ```
 
 #### linkRegex
@@ -328,8 +328,8 @@ emailRegex.test("mike09+cool.com"); // false
 Regex that can find links in a string
 
 ```ts
-emailRegex.test("https://www.youtube.com/stevesteacher"); // true
-emailRegex.test("mike@gmail.com"); // false
+emailRegex.test('https://www.youtube.com/stevesteacher'); // true
+emailRegex.test('mike@gmail.com'); // false
 ```
 
 ### Other
@@ -343,9 +343,9 @@ Will generate a url with the given query parameters.
 _Note that if the value in data is undefined or null the parameter will be ignored._
 
 ```ts
-urlQueryBuilder("http://test.com/wow", {
-	cool: true,
-	name: "jack",
+urlQueryBuilder('http://test.com/wow', {
+    cool: true,
+    name: 'jack',
 }); // http://test.com/wow?cool=true&name=jack
 ```
 
@@ -356,9 +356,9 @@ Search for text in string, this will ignore casing. Will be true if at least one
 _NOTE:_ this uses .include() to search, so will only work on individual words and not text in words. Use [regexStringSearch()](#regexstringsearch) or [regexStringListSearch()](#regexstringlistsearch) instead if you want a more powerful search
 
 ```ts
-includeSearch("cool", "I am cool"); // true
-includeSearch("cool", "I am drool", "you are cool"); // true
-includeSearch("cool", "yup", "nothing"); // false
+includeSearch('cool', 'I am cool'); // true
+includeSearch('cool', 'I am drool', 'you are cool'); // true
+includeSearch('cool', 'yup', 'nothing'); // false
 ```
 
 ---

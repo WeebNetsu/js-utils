@@ -1,4 +1,4 @@
-import { digitRegex, emailRegex } from "../regex";
+import { digitRegex, emailRegex } from '../regex';
 
 /**
  * This will check if the value passed in is a valid number, mainly useful on strings.
@@ -8,13 +8,13 @@ import { digitRegex, emailRegex } from "../regex";
  * @returns true if value is a valid number
  */
 export const isValidNumber = (value: string | number) => {
-	return (
-		!Number.isNaN(Number(value)) &&
-		Number(value) !== Infinity &&
-		Number(value) !== -Infinity &&
-		digitRegex.test(String(value).replace(/\s/g, "")) &&
-		String(value).replace(/\s/g, "").split(".").length <= 2
-	);
+    return (
+        !Number.isNaN(Number(value)) &&
+        Number(value) !== Infinity &&
+        Number(value) !== -Infinity &&
+        digitRegex.test(String(value).replace(/\s/g, '')) &&
+        String(value).replace(/\s/g, '').split('.').length <= 2
+    );
 };
 
 /**
@@ -24,13 +24,13 @@ export const isValidNumber = (value: string | number) => {
  * @returns true if the email is valid
  */
 export const isValidEmail = (email?: string) => {
-	if (!email) return false;
-	if (checkStrEmpty(email)) return false;
+    if (!email) return false;
+    if (checkStrEmpty(email)) return false;
 
-	// just in case
-	if (email.split("@").length !== 2) return false;
+    // just in case
+    if (email.split('@').length !== 2) return false;
 
-	return emailRegex.test(email);
+    return emailRegex.test(email);
 };
 
 /**
@@ -43,38 +43,36 @@ export const isValidEmail = (email?: string) => {
  *
  * @returns true if string is empty
  */
-export const checkStrEmpty = (
-	str: string | (string | undefined)[] | undefined | any,
-): boolean => {
-	// if undefined
-	if (!str) return true;
+export const checkStrEmpty = (str: string | (string | undefined)[] | undefined | any): boolean => {
+    // if undefined
+    if (!str) return true;
 
-	if (typeof str === "object") {
-		// if array is empty
-		if (str.length < 1) {
-			return true;
-		}
+    if (typeof str === 'object') {
+        // if array is empty
+        if (str.length < 1) {
+            return true;
+        }
 
-		for (let index = 0; index < str.length; index++) {
-			const selectedStr = str[index];
+        for (let index = 0; index < str.length; index++) {
+            const selectedStr = str[index];
 
-			// if undefined
-			if (!selectedStr) return true;
-			// make sure it's a string
-			if (typeof selectedStr !== "string") return true;
+            // if undefined
+            if (!selectedStr) return true;
+            // make sure it's a string
+            if (typeof selectedStr !== 'string') return true;
 
-			// check if empty
-			if (selectedStr.trim().length < 1) {
-				return true;
-			}
-		}
+            // check if empty
+            if (selectedStr.trim().length < 1) {
+                return true;
+            }
+        }
 
-		return false;
-	}
+        return false;
+    }
 
-	if (typeof str !== "string") return true;
+    if (typeof str !== 'string') return true;
 
-	return str.trim().length < 1;
+    return str.trim().length < 1;
 };
 
 /**
@@ -85,9 +83,7 @@ export const checkStrEmpty = (
  *
  * @returns true if string is not empty
  */
-export const isNonEmptyStr = (str: unknown): str is string => {
-	return typeof str === "string" && str.trim().length > 0;
-};
+export const isNonEmptyStr = (str: unknown): str is string => typeof str === 'string' && str.trim().length > 0;
 
 /**
  * Checks if all strings in an array is not empty. It will also check if passed
@@ -98,9 +94,9 @@ export const isNonEmptyStr = (str: unknown): str is string => {
  * @returns true if all strings in the array is not empty
  */
 export const isNonEmptyArrStr = (strArr: unknown): strArr is string[] => {
-	if (!Array.isArray(strArr)) return false;
+    if (!Array.isArray(strArr)) return false;
 
-	if (strArr.length < 1) return false;
+    if (strArr.length < 1) return false;
 
-	return strArr.every((str) => isNonEmptyStr(str));
+    return strArr.every((str) => isNonEmptyStr(str));
 };

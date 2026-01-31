@@ -15,25 +15,23 @@
  *  }) // http://test?cool=true&name=jack
  */
 export const urlQueryBuilder = (
-	url: string,
-	data: {
-		[key: string]: string | number | boolean | undefined | null;
-	}
+    url: string,
+    data: {
+        [key: string]: string | number | boolean | undefined | null;
+    },
 ) => {
-	let queryURL = url;
+    let queryURL = url;
 
-	Object.keys(data).map((key) => {
-		const value = data[key];
+    Object.keys(data).map((key) => {
+        const value = data[key];
 
-		if (value !== undefined && value !== null) {
-			// queryURL.search("?") > -1 -> if there are already other query parameters
-			queryURL += `${
-				queryURL.split("?").length > 1 ? "&" : "?"
-			}${key}=${value}`;
-		}
-	});
+        if (value !== undefined && value !== null) {
+            // queryURL.search("?") > -1 -> if there are already other query parameters
+            queryURL += `${queryURL.split('?').length > 1 ? '&' : '?'}${key}=${value}`;
+        }
+    });
 
-	return queryURL;
+    return queryURL;
 };
 
 /**
@@ -52,13 +50,8 @@ export const urlQueryBuilder = (
  * includeSearch("cool", "I am drool", "you are cool") // true
  * includeSearch("cool", "yup", "nothing") // false
  */
-export const includeSearch = (
-	search: string,
-	...args: (string | undefined)[]
-): boolean => {
-	const res = args.map((arg) =>
-		arg?.toLowerCase().includes(search.toLowerCase())
-	);
+export const includeSearch = (search: string, ...args: (string | undefined)[]): boolean => {
+    const res = args.map((arg) => arg?.toLowerCase().includes(search.toLowerCase()));
 
-	return res.indexOf(true) !== -1;
+    return res.indexOf(true) !== -1;
 };
