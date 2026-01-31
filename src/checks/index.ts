@@ -100,3 +100,14 @@ export const isNonEmptyArrStr = (strArr: unknown): strArr is string[] => {
 
     return strArr.every((str) => isNonEmptyStr(str));
 };
+
+/**
+ * Checks if the value provided can be found inside the provided enum
+ *
+ * @param value Value to check if it exists in enum
+ * @param T Enum
+ * @returns true if value is part of the provided enum
+ */
+export const isOfEnum = <T extends { [key: string]: unknown }>(value: unknown, T: T): value is T[keyof typeof T] => {
+    return Object.values(T).includes(value);
+};

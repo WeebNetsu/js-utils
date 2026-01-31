@@ -29,6 +29,7 @@ NPM: https://www.npmjs.com/package/@netsu/js-utils
     - [isValidEmail](#isvalidemail)
     - [isNonEmptyStr](#isnonemptystr)
     - [isNonEmptyArrStr](#isnonemptyarrstr)
+    - [isOfEnum](#isofenum)
 - [Format](#format)
     - [formatToCalendarDate](#formattocalendardate)
     - [formatToHumanDate](#formattohumandate)
@@ -227,6 +228,21 @@ isNonEmptyArrStr(['  ', 'some text']); // false, 1 item is an empty string
 isNonEmptyArrStr(['lol', 'some text']); // true
 isNonEmptyArrStr(23); // false because not an array of strings
 isNonEmptyArrStr([23]); // false because not an array of strings
+```
+
+#### isOfEnum
+
+Checks if the value provided can be found inside the provided enum
+
+```ts
+enum Sizes {
+    MIN = 'min',
+    MAX = 'max',
+}
+
+isOfEnum('min', Sizes); // true
+isOfEnum(23, Sizes); // false, 23 is not part of the Sizes enum
+isOfEnum('small', Sizes); // false, small is not part of the Sizes enum
 ```
 
 ### Format
