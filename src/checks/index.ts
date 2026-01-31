@@ -34,6 +34,8 @@ export const isValidEmail = (email?: string) => {
 };
 
 /**
+ * @deprecated use `isNonEmptyStr` and `isNonEmptyArrStr` instead
+ *
  * Checks if string is empty, if it is, returns true. It will also check if passed
  * in value is of type "string".
  *
@@ -42,7 +44,7 @@ export const isValidEmail = (email?: string) => {
  * @returns true if string is empty
  */
 export const checkStrEmpty = (
-	str: string | (string | undefined)[] | undefined | any
+	str: string | (string | undefined)[] | undefined | any,
 ): boolean => {
 	// if undefined
 	if (!str) return true;
@@ -73,4 +75,32 @@ export const checkStrEmpty = (
 	if (typeof str !== "string") return true;
 
 	return str.trim().length < 1;
+};
+
+/**
+ * Checks if string is not empty, if it has at least 1 NON SPACE character, returns true. It will also check if passed
+ * in value is of type "string".
+ *
+ * @param str String to check
+ *
+ * @returns true if string is not empty
+ */
+export const isNonEmptyStr = (str: unknown): str is string => {
+	return typeof str === "string" && str.trim().length > 0;
+};
+
+/**
+ * Checks if all strings in an array is not empty. It will also check if passed
+ * in value is of type "string[]".
+ *
+ * @param strArr Array of strings to check
+ *
+ * @returns true if all strings in the array is not empty
+ */
+export const isNonEmptyArrStr = (strArr: unknown): strArr is string[] => {
+	if (!Array.isArray(strArr)) return false;
+
+	if (strArr.length < 1) return false;
+
+	return strArr.every((str) => isNonEmptyStr(str));
 };

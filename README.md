@@ -27,7 +27,8 @@ NPM: https://www.npmjs.com/package/@netsu/js-utils
 - [Checks](#checks)
   - [isValidNumber](#isvalidnumber)
   - [isValidEmail](#isvalidemail)
-  - [checkStrEmpty](#checkstrempty)
+  - [isNonEmptyStr](#isnonemptystr)
+  - [isNonEmptyArrStr](#isnonemptyarrstr)
 - [Format](#format)
   - [formatToCalendarDate](#formattocalendardate)
   - [formatToHumanDate](#formattohumandate)
@@ -159,7 +160,7 @@ Changes all links in a text to an anchor tag.
 ```ts
 // Cannot be manually closed. Click this: <a href="https://www.youtube.com/stevesteacher" target="_blank">https://www.youtube.com/stevesteacher</a> and <a href="https://www.youtube.com" target="_blank">https://www.youtube.com</a>
 enableTextLinks(
-	"Cannot be manually closed. Click this: https://www.youtube.com/stevesteacher and https://www.youtube.com"
+	"Cannot be manually closed. Click this: https://www.youtube.com/stevesteacher and https://www.youtube.com",
 );
 ```
 
@@ -207,14 +208,25 @@ isValidEmail("nick"); // false
 isValidEmail("jack@mac@test.com"); // false
 ```
 
-#### checkStrEmpty
+#### isNonEmptyStr
 
-Checks if string is empty, if it is, returns true. It will also check if passed in value is of type "string".
+Checks if string is not empty, if it has at least 1 NON SPACE character, returns true. It will also check if passed in value is of type "string".
 
 ```ts
-checkStrEmpty("  "); // true
-checkStrEmpty("lol"); // false
-checkStrEmpty(23); // true because not a string
+isNonEmptyStr("  "); // false
+isNonEmptyStr("lol"); // true
+isNonEmptyStr(23); // false because not a string
+```
+
+#### isNonEmptyArrStr
+
+Checks if all strings in an array is not empty. It will also check if passed in value is of type "string[]".
+
+```ts
+isNonEmptyArrStr(["  ", "some text"]); // false, 1 item is an empty string
+isNonEmptyArrStr(["lol", "some text"]); // true
+isNonEmptyArrStr(23); // false because not an array of strings
+isNonEmptyArrStr([23]); // false because not an array of strings
 ```
 
 ### Format
