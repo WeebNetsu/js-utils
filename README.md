@@ -259,9 +259,9 @@ formatToCalendarDate(new Date()); // 2023-04-28
 
 Format JS date to date and time that people can easily understand (defaults to `D MMM YYYY HH:mm`)
 
-```
-formatToHumanDate(new Date()) // 28 Apr 2023 10:18
-formatToHumanDate(new Date(), "D-MM-YY hh:mm") // 28-04-23 10:18
+```ts
+formatToHumanDate(new Date()); // 28 Apr 2023 10:18
+formatToHumanDate(new Date(), 'D-MM-YY hh:mm'); // 28-04-23 10:18
 ```
 
 #### formatMin
