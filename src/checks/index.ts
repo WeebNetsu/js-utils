@@ -25,7 +25,7 @@ export const isValidNumber = (value: string | number) => {
  */
 export const isValidEmail = (email?: string) => {
     if (!email) return false;
-    if (checkStrEmpty(email)) return false;
+    if (!isNonEmptyStr(email)) return false;
 
     // just in case
     if (email.split('@').length !== 2) return false;
