@@ -1,4 +1,4 @@
-import dayjs from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
 
 /**
  * Format JS date to date value that calendar inputs can use
@@ -20,7 +20,7 @@ export const formatToCalendarDate = (date: Date = new Date()): string => {
  * @example
  *  formatToHumanDate(new Date()); // 14 Feb 2023 14:10
  */
-export const formatToHumanDate = (date: Date = new Date(), format = 'D MMM YYYY HH:mm'): string => {
+export const formatToHumanDate = (date: Date | Dayjs = new Date(), format = 'D MMM YYYY HH:mm'): string => {
     return dayjs(date).format(format);
 };
 
